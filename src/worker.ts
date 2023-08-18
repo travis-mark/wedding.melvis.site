@@ -27,6 +27,8 @@ export interface Env {
 
 export default {
 	async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
-		return new Response('Hello World!');
+		const destinationURL = "https://www.theknot.com/us/travis-luckenbaugh-and-mel-kesler-nov-2023";
+		const statusCode = 301;
+		return Response.redirect(destinationURL, statusCode);
 	},
 };
